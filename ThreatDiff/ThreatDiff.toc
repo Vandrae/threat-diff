@@ -1,0 +1,16 @@
+## Interface: 16001
+## Title: ThreatDiff |cff4fc3f7Forever|r
+## Notes: Exact threat differential on every enemy nameplate, a styleable threat meter, and per-character profiles.
+## Author: Gabe
+## Version: 1.4.1
+## SavedVariables: ThreatDiffDB
+## IconTexture: Interface\Icons\Ability_Warrior_DefensiveStance
+## AddonCompartmentFunc: ThreatDiff_OnAddonCompartmentClick
+## Category: Combat
+
+Core.lua
+Meter.lua
+UI.lua
+Options.lua
+Config.lua
+Minimap.lua
