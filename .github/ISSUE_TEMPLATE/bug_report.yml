@@ -1,0 +1,139 @@
+name: Bug report
+description: Something in ThreatDiff isn't working the way it should
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! The more detail you give, the faster this gets fixed.
+
+        **Quick checks before you post:**
+        - Numbers only show on enemies you're **in combat with**, and clear when combat ends.
+        - **Enemy nameplates must be on** (default key: **V**).
+        - WoW Forever hides threat on enemies you're **not targeting**. ThreatDiff keeps their last number, **dimmed**, for a few seconds. Target or mouse over the enemy to refresh it. This is a game limit, not a bug.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: I've checked
+      options:
+        - label: Enemy nameplates are on (V)
+          required: true
+        - label: I'm on the latest ThreatDiff version
+          required: true
+
+  - type: input
+    id: addon_version
+    attributes:
+      label: ThreatDiff version
+      description: Shown on the CurseForge page, or in the AddOns list on the character screen.
+      placeholder: "1.4.1"
+    validations:
+      required: true
+
+  - type: input
+    id: game_version
+    attributes:
+      label: Game version
+      description: Which WoW client are you playing?
+      placeholder: "WoW Forever 1.60.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part is affected?
+      options:
+        - Nameplate numbers
+        - Threat meter
+        - Settings window
+        - Position editor
+        - Minimap button
+        - Slash commands
+        - Profiles
+        - Something else
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: What were you playing as?
+      options:
+        - Tank
+        - Damage dealer
+        - Healer
+        - Solo (no group)
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: group
+    attributes:
+      label: Where were you?
+      options:
+        - Solo
+        - Party / dungeon
+        - Raid
+        - Open world with a group
+        - Not sure
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: Describe what you saw. Screenshots are very welcome. You can drag them straight into this box.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can I reproduce it?
+      placeholder: |
+        1. Pull two mobs while tanking
+        2. Target the first mob
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: probe
+    attributes:
+      label: /tdiff probe output
+      description: |
+        Especially important if numbers are missing or wrong.
+        Type `/tdiff probe`, start a fight with an enemy targeted, and about 3 seconds in the report appears in chat. Copy it here.
+      render: text
+
+  - type: textarea
+    id: lua_errors
+    attributes:
+      label: Lua errors
+      description: |
+        If the game showed an error, or ThreatDiff printed a red "error:" line in chat, paste it here.
+        An error catcher such as BugSack/BugGrabber makes these easy to copy.
+      render: text
+
+  - type: input
+    id: other_addons
+    attributes:
+      label: Other nameplate or threat addons
+      description: Plater, Details!, Threat Meter, Kui Nameplates, etc. Say "none" if you only run ThreatDiff.
+      placeholder: "Plater, Details!"
+
+  - type: textarea
+    id: anything_else
+    attributes:
+      label: Anything else?
+      description: Your profile or settings if relevant (for example, a custom anchor point or font), or whether it still happens after `/reload`.
